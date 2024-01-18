@@ -54,7 +54,7 @@ if image_count < demo_limit:
         with open(file_path, "wb") as file:
             file.write(bytes_data)
 
-        col1, col2, col3 = st.columns(3)
+        col1, col2 = st.columns(2)
         with col1:
             st.image(
                 uploaded_image,
@@ -73,31 +73,16 @@ if image_count < demo_limit:
                 # Wait for the get_data function to finish or timeout after 20 seconds
                 user_data = future_get_data.result(timeout=35)
                 if not bool(user_data):
-                    with col2:
-                        st.write(
-                            "Primary Algorithm Encountered Some Error. Using Back Up Algorithm"
-                        )
                     output = run_mrz(image)
-                    with col3:
-                        st.write("Back Up Algorithm Results")
+                    with col2:
                         for key, value in output.items():
                             st.write(key + " - " + value)
                 elif (
                     user_data["first_names"].strip() == ""
                     or user_data["lastname"].strip() == ""
                 ):
-                    with col2:
-                        st.write(
-                            "Primary Algorithm Finished Successfully But Confidence Level Is Low. Also Starting Back Up Algorithm"
-                        )
-                        st.write("Primary Algorithm Results - ")
-                        for key, value in user_data.items():
-                            if key == "lastname" or key == "first_names":
-                                continue
-                            st.write(key + " - " + value)
                     output = run_mrz(image)
-                    with col3:
-                        st.write("Back Up Algorithm Results")
+                    with col2:
                         for key, value in output.items():
                             st.write(key + " - " + value)
                 else:
@@ -107,16 +92,11 @@ if image_count < demo_limit:
                                 continue
                             st.write(key + " - " + value)
             except concurrent.futures.TimeoutError:
-                with col2:
-                    st.write(
-                        "Primary Algorithm Is Taking Too Long. Terminating & Using Back Up Algorithm"
-                    )
                 future_get_data.cancel()  # Cancel the get_data task
                 # Submit the run_mrz function
                 future_run_mrz = executor.submit(run_mrz, image)
                 run_mrz_result = future_run_mrz.result()
-                with col3:
-                    st.write("Backup Algorithm Results")
+                with col2:
                     for key, value in run_mrz_result.items():
                         st.write(key + " - " + value)
 
