@@ -70,7 +70,7 @@ if image_count < demo_limit:
             # Submit the get_data function
             future_get_data = executor.submit(get_data, my_api_key)
             try:
-                # Wait for the get_data function to finish or timeout after 20 seconds
+                # Wait for the get_data function to finish or timeout after 35 seconds
                 user_data = future_get_data.result(timeout=35)
                 if not bool(user_data):
                     with col2:
