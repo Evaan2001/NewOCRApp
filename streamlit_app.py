@@ -1,7 +1,7 @@
 import streamlit as st
 from functions import *
-import requests
-import json
+import concurrent.futures
+import time
 
 
 def read_file():
@@ -30,12 +30,10 @@ def print_headings(demo_limit):
 
 image_count = read_file()
 demo_limit = 75
+my_api_key = "K86635264288957"
 
 print_headings(demo_limit)
 
-# Create or get the session state
-
-my_api_key = "K86635264288957"
 
 if image_count < demo_limit:
     uploaded_image = st.file_uploader(
@@ -56,7 +54,7 @@ if image_count < demo_limit:
         with open(file_path, "wb") as file:
             file.write(bytes_data)
 
-        col1, col2 = st.columns(2)
+        col1, col2, col3 = st.columns(3)
         with col1:
             st.image(
                 uploaded_image,
@@ -68,70 +66,60 @@ if image_count < demo_limit:
         image = "image.jpg"
         reduce_image_size(image, "test.jpg")
 
-        payload = {
-            "isOverlayRequired": False,
-            "apikey": my_api_key,
-            "detectOrientation": True,
-            "scale": True,
-            "OCREngine": 2,
-        }
-
-        final_image = "test.jpg"
-
-        with open(final_image, "rb") as f:
-            r = requests.post(
-                "https://api.ocr.space/parse/image",
-                files={final_image: f},
-                data=payload,
-            )
-        output = r.content.decode()
-        output_dictionary = json.loads(output)
-
-        if output_dictionary["OCRExitCode"] != 1:
-            with col2:
-                st.write(
-                    "OCR Failed due to - " + str(output_dictionary["ErrorMessage"])
-                )
-        else:
-            mrz = my_extract_mrz(output_dictionary["ParsedResults"][0]["ParsedText"])
-            data = {}
-            if (
-                mrz[1][0].isalnum() and len(mrz[0]) > 10
-            ):  # if len(mrz[0] + mrz[1]) == 88:
-                first_line = mrz[0]
-                data["country"] = first_line[2:5].strip().strip("<")
-                last_name_ending_index = first_line.find("<<", 5)
-                data["lastname"] = preliminary_correction(
-                    first_line[5:last_name_ending_index].replace("<", " ").strip("<")
-                )
-                data["first_names"] = preliminary_correction(
-                    first_line[last_name_ending_index:].replace("<", " ").strip()
-                )
-
-                second_line = mrz[1]
-                if second_line.find(data["country"]) == -1:
-                    offset = 0  # nationality(11,12,13) -> dob (14th char onwards so index=13)
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            # Submit the get_data function
+            future_get_data = executor.submit(get_data, my_api_key)
+            try:
+                # Wait for the get_data function to finish or timeout after 20 seconds
+                user_data = future_get_data.result(timeout=35)
+                if not bool(user_data):
+                    with col2:
+                        st.write(
+                            "Primary Algorithm Encountered Some Error. Using Back Up Algorithm"
+                        )
+                    output = run_mrz(image)
+                    with col3:
+                        st.write("Back Up Algorithm Results")
+                        for key, value in output.items():
+                            st.write(key + " - " + value)
+                elif (
+                    user_data["first_names"].strip() == ""
+                    or user_data["lastname"].strip() == ""
+                ):
+                    with col2:
+                        st.write(
+                            "Primary Algorithm Finished Successfully But Confidence Level Is Low. Also Starting Back Up Algorithm"
+                        )
+                        st.write("Primary Algorithm Results - ")
+                        for key, value in user_data.items():
+                            if key == "lastname" or key == "first_names":
+                                continue
+                            st.write(key + " - " + value)
+                    output = run_mrz(image)
+                    with col3:
+                        st.write("Back Up Algorithm Results")
+                        for key, value in output.items():
+                            st.write(key + " - " + value)
                 else:
-                    offset = second_line.find(data["country"]) - 10
+                    with col2:
+                        for key, value in user_data.items():
+                            if key == "lastname" or key == "first_names":
+                                continue
+                            st.write(key + " - " + value)
+            except concurrent.futures.TimeoutError:
+                with col2:
+                    st.write(
+                        "Primary Algorithm Is Taking Too Long. Terminating & Using Back Up Algorithm"
+                    )
+                future_get_data.cancel()  # Cancel the get_data task
+                # Submit the run_mrz function
+                future_run_mrz = executor.submit(run_mrz, image)
+                run_mrz_result = future_run_mrz.result()
+                with col3:
+                    st.write("Backup Algorithm Results")
+                    for key, value in run_mrz_result.items():
+                        st.write(key + " - " + value)
 
-                index = 0 + offset
-                data["document_number"] = (
-                    second_line[index : index + 9].strip("<").strip()
-                )
-                index = index + 9 + 1 + 3
-                data["dob"] = format_date(second_line[index : index + 6].strip("<"))
-                index = index + 6
-                data["sex"] = ""
-                for char in second_line[index:]:
-                    if char == "F" or char == "M":
-                        data["sex"] = char
-                        break
-            else:
-                pass  # Call run_mrz
-
-            with col2:
-                for key, value in data.items():
-                    st.write(key + " - " + value)
 
 else:
     st.write(
