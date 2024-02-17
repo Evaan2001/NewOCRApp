@@ -8,8 +8,9 @@ We'll create a web-app where users can upload a photo of a passport and get the 
 </h3>
 
 <p align="center">
-Here's the code for a [Streamlit](https://streamlit.io) web-app, a highly parallelized program in CUDA (Nvidia's parallel computing platform) that was able to solve 1,750,000 sudoku boards/sec by applying constraint propagation on a GPU (Graphical Processing Unit).
+    Here's the code for a [Streamlit](https://streamlit.io) web-app, a highly parallelized program in CUDA (Nvidia's parallel computing platform) that was able to solve 1,750,000 sudoku boards/sec by applying constraint propagation on a GPU (Graphical Processing Unit).
 </p>
+
 
 <h2 align="center"> 
 What Do We Need?
