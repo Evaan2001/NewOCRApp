@@ -11,6 +11,11 @@ We'll create a web-app where users can upload a photo of a passport and get the 
 Here's the code for a [Streamlit](https://streamlit.io/) web-app XYZ ...
 </p>p
 
+<div align="center">
+
+Here's a paragraph with some [hyperlinks](https://example.com).
+
+</div>
 
 
 <h2 align="center"> 
