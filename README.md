@@ -7,9 +7,9 @@ width = "900"/>
 We'll create a web-app where users can upload a photo of a passport and get the essential details! 
 </h3>
 
-<p align="center">
+p {align="center">
 Here's the code for a [Streamlit](%28https://streamlit.io/) web-app, [Markdown Live Preview](https://markdownlivepreview.com/) XYZ ...
-</p>
+}
 
 
 
