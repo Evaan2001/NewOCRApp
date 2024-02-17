@@ -4,12 +4,12 @@ width = "900"/>
 
 </p>
 <h3 align="center">
-When I was freelancing, I created this web-app for a client where users can upload a photo of a passport and get the essential details! 
+We'll create a web-app where users can upload a photo of a passport and extract the essential details! 
 </h3>
 
 <div align="center">
 
-Here's a paragraph with some [Streamlit](https://streamlit.io).
+I was freelancing for a security company in Austin, TX, and was tasked to write code for an embedded device to scan someone's passport and extract their information. I took that software and created a web-app using [Streamlit](https://streamlit.io) so that others can also use my work.
 </div>
 
 <h2 align="center"> 
