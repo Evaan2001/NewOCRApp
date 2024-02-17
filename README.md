@@ -13,11 +13,16 @@ I was freelancing for a security company in Austin, TX, and was tasked to write 
 </div>
 
 <h2 align="center"> 
-What Do We Need?
+What Information Can We Get?
 </h2>
  
 <p  align="center">
-CUDA is a programming model developed by Nvidia for general computing on GPUs. To run CUDA files, you'll need two things –
+Given a photo of a passport, my software can retrieve the following:
+1. Issuing Country
+2. Full Name
+3. Passport Number
+4. Date of Birth
+5. Sex
 </p>
 
 1) The nvcc compiler, which stands for **Nv**idia **C**uda **C**ompiler
