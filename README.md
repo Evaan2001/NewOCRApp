@@ -4,8 +4,12 @@ width = "900"/>
 
 </p>
 <h3 align="center">
-We'll create a web-app via [Streamlit](https://streamlit.io/) where users can upload a photo of a passport and get the essential details! 
+We'll create a web-app via Streamlit where users can upload a photo of a passport and get the essential details! 
 </h3>
+
+<p align="center">
+    <a href="https://streamlit.io/">Streamlit</a>
+</p>
 
 <p align="center">
 Here's a highly parallelized program in CUDA (Nvidia's parallel computing platform) that was able to solve 1,750,000 sudoku boards/sec by applying constraint propagation on a GPU (Graphical Processing Unit).
