@@ -8,17 +8,9 @@ We'll create a web-app where users can upload a photo of a passport and get the 
 </h3>
 
 <div align="center">
-
 Here's a paragraph with some [Streamlit](https://streamlit.io).
 
 </div>
-
-<div align="center">
- 
-Here's the code for a [Streamlit](https://streamlit.io/) web-app 
-
-</div>
-
 
 <h2 align="center"> 
 What Do We Need?
