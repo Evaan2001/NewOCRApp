@@ -7,13 +7,10 @@ width = "900"/>
 We'll create a web-app where users can upload a photo of a passport and get the essential details! 
 </h3>
 
-<p  align="center">
-Here's the code for a [Streamlit](https://streamlit.io/) web-app XYZ ...
-</p>p
 
 <div align="center">
 
-Here's a paragraph with some [hyperlinks](https://example.com).
+Here's the code for a [Streamlit](https://streamlit.io/) web-app 
 
 </div>
 
