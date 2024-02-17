@@ -12,6 +12,10 @@ text-align: center;
 Here's the code for a [Streamlit](https://streamlit.io/) web-app XYZ ...
 }
 
+p {
+    text-align: center;
+}
+Here's the code for a [Streamlit](https://streamlit.io/) web-app XYZ ...
 
 
 <h2 align="center"> 
