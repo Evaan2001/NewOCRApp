@@ -18,12 +18,12 @@ What Information Can We Get?
  
 <p  align="center">
 Given a photo of a passport, my software can retrieve the following:
+</p>
 1. Issuing Country
 2. Full Name
 3. Passport Number
 4. Date of Birth
 5. Sex
-</p>
 
 1) The nvcc compiler, which stands for **Nv**idia **C**uda **C**ompiler
 2) A Nvidia graphics card (sadly, this means no Macs released after 2015; I used the Nvidia Quadro K1200 GPU which sells for about $100)
