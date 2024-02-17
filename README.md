@@ -8,7 +8,7 @@ We'll create a web-app where users can upload a photo of a passport and get the 
 </h3>
 
 p {align="center">
-Here's the code for a [Streamlit](%28https://streamlit.io/) web-app, [Markdown Live Preview](https://markdownlivepreview.com/) XYZ ...
+Here's the code for a [Streamlit](https://streamlit.io/) web-app, [Markdown Live Preview](https://markdownlivepreview.com/) XYZ ...
 }
 
 
