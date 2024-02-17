@@ -4,7 +4,7 @@ width = "900"/>
 
 </p>
 <h3 align="center">
-We'll create a web-app via [Streamlit](https://streamlit.io/) where users can upload a photo of a passport and see the essential details getting extracted! 
+We'll create a web-app via [Streamlit](https://streamlit.io) where users can upload a photo of a passport and get the essential details! 
 </h3>
 
 <p align="center">
