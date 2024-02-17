@@ -9,7 +9,7 @@ We'll create a web-app where users can upload a photo of a passport and extract 
 
 <div align="center">
 
-I was freelancing for a security company in Austin, TX, and was tasked to write code for an embedded device to scan someone's passport and extract their information. I took that software and created a web-app using [Streamlit](https://streamlit.io) so that others can also use my work.
+I was freelancing for a security company in Austin, TX, and was tasked to write code for an embedded device to extract someone's information from a photo of their passport. I took that software and created a web-app using [Streamlit](https://streamlit.io) so that others can also use my work. Click here to [use my app](https://revisedocr.streamlit.app/)!
 </div>
 
 <h2 align="center"> 
