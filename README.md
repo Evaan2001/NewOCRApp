@@ -7,6 +7,11 @@ width = "900"/>
 We'll create a web-app where users can upload a photo of a passport and get the essential details! 
 </h3>
 
+<div align="center">
+
+Here's a paragraph with some [hyperlinks](https://example.com).
+
+</div>
 
 <div align="center">
 Here's the code for a [Streamlit](https://streamlit.io/) web-app 
