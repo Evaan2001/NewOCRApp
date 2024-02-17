@@ -8,7 +8,8 @@ We'll create a web-app where users can upload a photo of a passport and get the 
 </h3>
 
 p {
-    text-align: center;
+    align="center;
+    text
 }
 Here's the code for a [Streamlit](https://streamlit.io/) web-app XYZ ...
 
