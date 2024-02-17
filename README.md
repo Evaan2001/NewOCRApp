@@ -8,8 +8,8 @@ We'll create a web-app where users can upload a photo of a passport and get the 
 </h3>
 
 <div align="center">
-Here's a paragraph with some [Streamlit](https://streamlit.io).
 
+Here's a paragraph with some [Streamlit](https://streamlit.io).
 </div>
 
 <h2 align="center"> 
