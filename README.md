@@ -33,12 +33,14 @@ What's The Logic?
 <div align="center">
  
 Every passport has a *Machine Readable Zone*, or ***MRZ*** for short. The MRZ is a standardized format for encoding essential passport holder information in a format that can be easily read by machine. It consists of two or three lines of text at the bottom of the personal information page of a passport. Here's a good article on [how we can decode an MRZ](https://www.linkedin.com/pulse/machine-readable-zone-mrz-decoding-globalpassag/). 
-
 </div>
 
-https://pyimagesearch.com/
 
 <p  align="center">
 <img  src="https://github.com/Evaan2001/Images_For_ReadMe/blob/main/passport_mrz.png"
 width = "400"/>
 
+<div align="center">
+ 
+[PyImageSearch](https://pyimagesearch.com/) has a good article on how we can [isolate the MRZ using traditional Computer Vision methods](https://pyimagesearch.com/2021/12/01/ocr-passports-with-opencv-and-tesseract/), so fancy ML models. The author then suggests using HP & Google's Tesseract OCR engine to OCR the identified MRZ area (OCR simply means getting all the words/characters in an image). However, the MRZ-identifying code proved unreliable from my tests. Additionally, Tesseract often made errors while OCRing characters printed in the Passport-Font.
+</div>
