@@ -57,7 +57,7 @@ I then discovered the [Free OCR API by ocr.space](https://ocr.space/OCRAPI). It'
 
 1. Make the API call to ocr.space with the uploaded passport photo
 2. Decode the OCR'ed text
-3. If decoding is proving troublesome, use the PassportEye Library
+3. If decoding is proving troublesome or the OCR seems inaccurate, use the PassportEye Library
 4. Show output
 
 <h2 align="center"> 
