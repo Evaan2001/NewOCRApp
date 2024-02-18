@@ -1,4 +1,14 @@
 def format_date(input_date, is_expiration_date=False):
+    """
+    Format the date from a given input string.
+    
+    Args:
+        input_date (str): The input date string in the format YYMMDD.
+        is_expiration_date (bool, optional): If True, indicates that the date is an expiration date.
+    
+    Returns:
+        str: The formatted date string in the format MM/DD/YYYY.
+    """
     from datetime import date
 
     current_year = date.today().year
@@ -21,6 +31,15 @@ def format_date(input_date, is_expiration_date=False):
 
 
 def new_preliminary_correction(name):
+    """
+    Perform a preliminary correction on a given name.
+    
+    Args:
+        name (str): The input name string.
+    
+    Returns:
+        str: The corrected name string.
+    """
     name = name.strip()
     new_name = name + "  "
     for i in range(len(name)):
@@ -41,10 +60,16 @@ def new_preliminary_correction(name):
     return new_name.strip()
 
 
-""" Helper Function"""
-
-
 def k_proportion(name):
+    """
+    Calculate how many characters of a string are the letter 'K'.
+    
+    Args:
+        name (str): The input name string.
+    
+    Returns:
+        float: The proportion of the character 'K' in the input string.
+    """
     k_count = 0
     for char in name:
         if char == "K":
@@ -53,6 +78,15 @@ def k_proportion(name):
 
 
 def advanced_correction(name):
+    """
+    Perform an advanced correction on a given name.
+    
+    Args:
+        name (str): The input name string.
+    
+    Returns:
+        str: The corrected name string.
+    """
     new_name = name.strip()
     list_of_names = new_name.split()
     output = ""
@@ -110,6 +144,15 @@ def reduce_image_size(input_path, output_path, target_size_kb=1024, quality=95):
 
 
 def num_of_letters(my_string):
+    """
+    Count the number of letters in a string.
+    
+    Args:
+        my_string (str): The input string.
+    
+    Returns:
+        int: The number of letters in the string.
+    """
     count = 0
     for char in my_string:
         if char.isalpha():
@@ -119,6 +162,16 @@ def num_of_letters(my_string):
 
 
 def get_first_n_alphabets(input_string, n):
+    """
+    Extract the first n alphabets from a string.
+    
+    Args:
+        input_string (str): The input string.
+        n (int): The number of alphabets to extract.
+    
+    Returns:
+        tuple: A tuple containing the extracted alphabets and the index where the extraction ended.
+    """
     result = ""
     count = 0
     index = 0
@@ -136,6 +189,15 @@ def get_first_n_alphabets(input_string, n):
 
 
 def strip_non_alphanumeric_from_ends(input_string):
+    """
+    Strip non-alphanumeric characters from the beginning and end of a string.
+    
+    Args:
+        input_string (str): The input string.
+    
+    Returns:
+        str: The stripped string.
+    """
     # return input_string
     import re
 
@@ -149,6 +211,15 @@ def strip_non_alphanumeric_from_ends(input_string):
 
 
 def my_extract_mrz(text):
+    """
+    Extract MRZ (Machine Readable Zone) information from a text.
+    
+    Args:
+        text (str): The input text containing MRZ information.
+    
+    Returns:
+        list: A list containing the extracted MRZ information.
+    """
     # Split the text into lines
     lines = text.split("\n")
     i = -1
@@ -198,32 +269,17 @@ def preliminary_correction(name):
     return new_name.strip()
 
 
-""" Helper Function"""
-
-
-def k_proportion(name):
-    k_count = 0
-    for char in name:
-        if char == "K":
-            k_count = k_count + 1
-    return k_count / len(name)
-
-
-def advanced_correction(name):
-    new_name = name.strip()
-    list_of_names = new_name.split()
-    output = ""
-
-    for name_part in list_of_names:
-        if k_proportion(name_part) > 0.25:
-            name_part = name_part.strip("K")
-        output = output + " " + name_part
-
-    output = output.strip()
-    return output
-
 
 def run_mrz(image):
+    """
+    Run MRZ (Machine Readable Zone) extraction and interpretation on an image using the backup PassportEye algorithm.
+    
+    Args:
+        image (str): Path to the input image.
+    
+    Returns:
+        dict: A dictionary containing extracted MRZ information.
+    """
     from passporteye import read_mrz
 
     output = {}
@@ -255,6 +311,15 @@ def run_mrz(image):
 
 
 def get_data(my_api_key):
+    """
+    Fetch data using OCR.Space API.
+    
+    Args:
+        my_api_key (str): The API key for OCR.Space.
+    
+    Returns:
+        dict: A dictionary containing extracted data.
+    """
     import requests
     import json
 
