@@ -1,5 +1,5 @@
 <p  align="center">
-<img  src="https://github.com/Evaan2001/Images_For_ReadMe/blob/main/Passport_OCR_App.png"
+<img  src="https://github.com/Evaan2001/Images_For_ReadMe/blob/main/Passport_OCR.png"
 width = "900"/>
 
 </p>
