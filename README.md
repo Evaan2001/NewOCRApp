@@ -31,3 +31,8 @@ What's The Logic?
 </h2>
 
 Every passport has a *Machine Readable Zone*, or ***MRZ*** for short. The MRZ is a standardized format for encoding essential passport holder information in a format that can be easily read by machine. It consists of two or three lines of text at the bottom of the personal information page of a passport. Here's a good article on [how we can decode an MRZ](https://www.linkedin.com/pulse/machine-readable-zone-mrz-decoding-globalpassag/). 
+
+<p  align="center">
+<img  src="https://github.com/Evaan2001/Images_For_ReadMe/blob/main/passport_mrz.png"
+width = "400"/>
+
