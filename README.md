@@ -61,12 +61,27 @@ I then discovered the [Free OCR API by ocr.space](https://ocr.space/OCRAPI). It'
 4. Show output
 
 <h2 align="center"> 
+What's Streamlit?
+</h2>
+
+<div align="center">
+ 
+
+Streamlit is an open-source Python library that allows you to create web applications for machine learning and data science projects quickly and easily. It is designed to make the process of building interactive web applications as simple as writing Python scripts. There are 2 parts to using Streamlit –
+</div>
+
+1. The super simple Front-End Support which makes designing the UI of the web-app a breeze
+2. Hosting the web-app on the free Streamlit Cloud so that people can use your app at no cost
+
+<h2 align="center"> 
 Limitations
 </h2>
 
 <div align="center">
  
-Text
+1. The free version of the ocr.space API is restricted to 500 calls per month. As such, I'm currently limiting usage of my app to 75 uploads in a week to provide equal access to everybody.
+2. Because I don't have any control over the traffic present on ocr.space's servers or on the Streamlit Cloud, the process can sometimes take longer than 30 seconds, though the average processing time is about 15 seconds.
+3. Based on the picture quality and the correctness of the OCR'ed text, my software is not 100% accurate. The current accuracy is 95%.
 </div>
 
 <h2 align="center"> 
