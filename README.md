@@ -27,7 +27,7 @@ Given a photo of a passport, my software can retrieve the following:
 5. Sex
 
 <h2 align="center"> 
-What's The Logic?
+What's The Process?
 </h2>
 
 <div align="center">
