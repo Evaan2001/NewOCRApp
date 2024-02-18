@@ -29,10 +29,36 @@ def format_date(input_date, is_expiration_date=False):
     formatted_date = month + "/" + day + "/" + year
     return formatted_date
 
+def preliminary_correction(name):
+    """
+    Perform a preliminary correction on a given name.
+    
+    Args:
+        name (str): The input name string.
+    
+    Returns:
+        str: The corrected name string.
+    """
+    name = name.strip()
+    new_name = name + "  "
+    for i in range(len(name)):
+        if name[i].isspace() and name[i + 1].isspace():
+            new_name = name[0:i]
+            break
+        if (
+            name[i].isspace()
+            and name[i + 1] == "K"
+            and (name[i + 2] == "K" or name[i + 2].isspace())
+        ):
+            new_name = name[0:i]
+            break
+
+    return new_name.strip()
+
 
 def new_preliminary_correction(name):
     """
-    Perform a preliminary correction on a given name.
+    Perform a nuanced preliminary correction on a given name for the results given by the OCR.Space API.
     
     Args:
         name (str): The input name string.
@@ -249,25 +275,6 @@ def my_extract_mrz(text):
         strip_non_alphanumeric_from_ends(mrz_string[0 : line1_endpoint + 1]),
         strip_non_alphanumeric_from_ends(mrz_string[line1_endpoint + 1 :].strip("<")),
     ]
-
-
-def preliminary_correction(name):
-    name = name.strip()
-    new_name = name + "  "
-    for i in range(len(name)):
-        if name[i].isspace() and name[i + 1].isspace():
-            new_name = name[0:i]
-            break
-        if (
-            name[i].isspace()
-            and name[i + 1] == "K"
-            and (name[i + 2] == "K" or name[i + 2].isspace())
-        ):
-            new_name = name[0:i]
-            break
-
-    return new_name.strip()
-
 
 
 def run_mrz(image):
