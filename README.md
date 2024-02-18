@@ -100,4 +100,4 @@ Here's what you'll find –
 6. *requirements.txt* – list of python packages to be installed by Streamlit for app deployment
 7. *streamlit_app.py* – python script that manages the front-end of the app and calls the relevant algorithm/function contained in *functions.py*
 
-You can ignore any other file
+*You can ignore the other files*
