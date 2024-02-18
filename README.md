@@ -32,9 +32,5 @@ What's The Logic?
 
 Link – https://github.com/Evaan2001/Images_For_ReadMe/blob/main/Passport_OCR_App.png
 
-<div style="display: flex; align-items: center;">
-    <img src="https://github.com/Evaan2001/Images_For_ReadMe/blob/main/Passport_OCR_App.png" alt="Image" style="width: 100px; height: auto; margin-right: 10px;">
-    <div>
-        Text to the right of the image.
-    </div>
-</div>
+| ![Image](https://github.com/Evaan2001/Images_For_ReadMe/blob/main/Passport_OCR_App.png) | Text to the right of the image. |
+|---|---|
