@@ -24,11 +24,3 @@ Given a photo of a passport, my software can retrieve the following:
 4. Date of Birth
 5. Sex
 </p>
-1. Passport Issuing Country (It's almost always the country of citizenship of the passport holder)
-2. Full Name
-3. Passport Number
-4. Date of Birth
-5. Sex
-
-1) The nvcc compiler, which stands for **Nv**idia **C**uda **C**ompiler
-2) A Nvidia graphics card (sadly, this means no Macs released after 2015; I used the Nvidia Quadro K1200 GPU which sells for about $100)
