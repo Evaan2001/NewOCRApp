@@ -88,7 +88,14 @@ Limitations
 Files
 </h2>
 
-<div align="center">
- 
-Text
-</div>
+<p  align="center">
+Here's what you'll find –
+</p>
+
+1. *Demo_Images* – A list of images I used to test my algorithm 
+2. *app-venv* – The virtual environment I used to develop this app
+3. *functions.py* – A file that has a bunch of helper functions I used frequently (including my string processing functions for OCR'ed text)
+4. *images_processed.txt* – A text file that records how many images my web-app has processed in the last week
+5. *packages.txt* – list of Linux dependencies (installed with apt-get) outside the Python environment to be installed by Streamlit for app deployment
+6. *requirements.txt* – list of python packages to be installed by Streamlit for app deployment
+7. *streamlit_app.py* – python script that manages the front-end of the app and calls the relevant algorithm/function contained in *functions.py*
