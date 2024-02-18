@@ -44,3 +44,8 @@ width = "400"/>
  
 [PyImageSearch](https://pyimagesearch.com/) has a good article on how we can [isolate the MRZ using traditional Computer Vision methods](https://pyimagesearch.com/2021/12/01/ocr-passports-with-opencv-and-tesseract/), so no fancy ML models. The author then suggests using HP/Google's Tesseract OCR engine to OCR the identified MRZ area (OCR simply means getting all the words/characters in an image). However, PyImageSearch's MRZ-identifying code proved unreliable from my tests. Additionally, Tesseract often made errors while OCRing characters in the Passport-Font.
 </div>
+
+<div align="center">
+ 
+I then ran into [PassportEye](https://github.com/konstantint/PassportEye), a Python library and a command-line tool that claims to be able to extract the relevant details from a photo of a passport. It is also rotation-invariant. 
+</div>
