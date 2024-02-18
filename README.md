@@ -30,7 +30,4 @@ Given a photo of a passport, my software can retrieve the following:
 What's The Logic?
 </h2>
 
-Link – https://github.com/Evaan2001/Images_For_ReadMe/blob/main/Passport_OCR_App.png
-
-| ![Image](https://github.com/Evaan2001/Images_For_ReadMe/blob/main/Passport_OCR_App.png) | Text to the right of the image. |
-|---|---|
+Every passport has a *Machine Readable Zone*, or ***MRZ*** for short. The MRZ is a standardized format for encoding essential passport holder information in a format that can be easily read by machine. It consists of two or three lines of text at the bottom of the personal information page of a passport.
