@@ -4,7 +4,7 @@ width = "900"/>
 
 </p>
 <h3 align="center">
-We'll create a web-app where users can upload a photo of a passport and extract the essential details! 
+Here's a web-app where users can upload a photo of a passport and extract the essential details! 
 </h3>
 
 <div align="center">
