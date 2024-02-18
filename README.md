@@ -18,9 +18,10 @@ What Information Can We Get?
  
 <p  align="center">
 Given a photo of a passport, my software can retrieve the following:
+</p>
+
 1. Passport Issuing Country (It's almost always the country of citizenship of the passport holder)
 2. Full Name
 3. Passport Number
 4. Date of Birth
 5. Sex
-</p>
